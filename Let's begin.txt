@@ -1,0 +1,7 @@
+Everyone suppose to go through the basic application building concepts on Android's website.
+
+Those who alreaady working on android project, may start "exploring' databse connectivity with the help.
+Authenticity of user (only 1review per user for 1 faculty) is also a technical concern. Find a way to deal with it.
+
+
+Thank you.
