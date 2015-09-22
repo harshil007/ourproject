@@ -1,0 +1,15 @@
+<<Retrive flag from Database whether, this student is giving rating to this faculty for the 1st time or not>>
+
+If for the first time:
+		
+		total_star[fac_ID] += given_star;
+		total_rated[fac_ID] ++ ;
+		
+		fac_rating[fac_ID] = (float) total_star[fac_ID] / total_rated[fac_ID] ;
+
+Not for the first time:
+		
+		total_star[fac_ID] -= <<DEPENDS ON TABLE, WILL TALK TOMORROW>>
+
+		fac_rating[fac_ID] = (float) total_star[fac_ID] / total_rated[fac_ID] ;
+		
