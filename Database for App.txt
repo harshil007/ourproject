@@ -1,39 +1,25 @@
----------------------- DATABASE DESIGN FOR ourproject --------------------------------
+Tables that Dipshil and I have come up with : 
+------------------------------------------
 
-1) User
-		user_ID -- varchar2(40) -- User's e-mail address only -- Primary Key
-		password -- varchar2(10)
-		no_of_ratings_given -- number(3)
-		
-2) Faculty
-		fac_ID -- char(3)-- Primary Key -- Already defined by Nirma Uni(available on TT site)
-		fac_name -- char(20)
-		fac_specialize -- varchar2(100) -- Contains Specialized Subjects
-		fac_image -- THIS ATTRIBUTE MAY BE REMOVED. 
-		dept_ID -- char(2) -- Foreign Key -- (Not in initial update)
-		add_date -- date() (not in user's view directly)
-		
-		
-3) Department (For further UPDATE, not in releasing version)
-		dept_ID -- char(2)
-		dept_Name -- char(15)
-		no_of_fac_in_dept -- number(2)
-		
-		
-4) Rating (Weak set - Depended on Faculty)
-		fac_ID -- char(3)-- Primary Key -- Already defined by Nirma Uni(available on TT site)
-		fac_rating -- number(3,2)
-		total_times_rated -- number(3)
-		total_star -- number(4)
-		
----------------------------------------------------------------------------
+          studentmaster(**sid**, sfname, slname, *branchid*)
+          student_rated(*sid*, f_rated)
 
+          facultymaster(**fid**, ffname, flname, *deptid*)
+          faculty_rating(*fid*, totalr1, totalr2, totalr3, total_raters)
 
-Assumptions:
-1) User can UPDATE his/her review n times.
-2) Users are identified only by their E-mail IDs, no User Names are required.
-3) Technical --> No connection to google for Login. There should a program, who sends a RANDOM password to NEW SIGNED UP users & on Signin up we have to ask user for New Password. 
--------------------------------------
+          branchmaster(**branchid**, branchname)
+          deptmaster(**deptid**, deptname) 
+          
+/* 
+ 
+   
+   
+   **student_rated table** is for storing the individual ratings for each faculty by each student 
+   
+   As a student rates any faculty, the id of faculty will be checked in his f_rated record and 
+    if it is not present, then facultyid, r1,r2,r3 will be stored in f_rated.
+   Next facultyid and r1, r2, r3 will be appended to the f_rated column of that particular student_id.
+   
+   *faculty_rating table** is for storing total ratings of each category for every faculty that has been rated
 
-Suggestions are welcome!
--psp65
+*/
