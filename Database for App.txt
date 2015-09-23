@@ -15,6 +15,7 @@ Tables that Dipshil and I have come up with :
    
    
    **student_rated table** is for storing the individual ratings for each faculty by each student 
+   
    As a student rates any faculty, the id of faculty will be checked in his f_rated record and 
     if it is not present, then facultyid, r1,r2,r3 will be stored in f_rated.
    Next facultyid and r1, r2, r3 will be appended to the f_rated column of that particular student_id.
