@@ -11,6 +11,7 @@
 		fac_specialize -- varchar2(100) -- Contains Specialized Subjects
 		fac_image -- THIS ATTRIBUTE MAY BE REMOVED. 
 		dept_ID -- char(2) -- Foreign Key -- (Not in initial update)
+		add_date -- date() (not in user's view directly)
 		
 		
 3) Department (For further UPDATE, not in releasing version)
