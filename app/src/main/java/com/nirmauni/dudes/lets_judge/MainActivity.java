@@ -1,17 +1,51 @@
 package com.nirmauni.dudes.lets_judge;
 
+import android.app.Activity;
+import android.app.ListActivity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TabHost;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
+
+    String str[];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TabHost th = (TabHost)findViewById(R.id.tabHost);
+
+        th.setup();
+
+        TabHost.TabSpec specs = th.newTabSpec("tab1");
+
+        specs.setContent(R.id.tab1);
+        specs.setIndicator("Trivia");
+        th.addTab(specs);
+
+        specs = th.newTabSpec("tab2");
+        specs.setContent(R.id.tab2);
+        specs.setIndicator("Faculties");
+        th.addTab(specs);
+
+        specs = th.newTabSpec("tab3");
+        specs.setContent(R.id.tab3);
+        specs.setIndicator("Notadded");
+        th.addTab(specs);
+
+
     }
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
