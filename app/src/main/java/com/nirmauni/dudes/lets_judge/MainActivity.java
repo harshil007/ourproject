@@ -25,21 +25,22 @@ public class MainActivity extends Activity {
 
         th.setup();
 
-        TabHost.TabSpec specs = th.newTabSpec("tab1");
+        TabHost.TabSpec specs1 = th.newTabSpec("tab1");
+        specs1.setContent(R.id.tab1);
+        specs1.setIndicator("Faculties");
+        th.addTab(specs1);
+        Intent tab1_intent = new Intent(this, Tab1Activity.class);
+        specs1.setContent(tab1_intent);
 
-        specs.setContent(R.id.tab1);
-        specs.setIndicator("Trivia");
-        th.addTab(specs);
+        TabHost.TabSpec specs2 = th.newTabSpec("tab2");
+        specs2.setContent(R.id.tab2);
+        specs2.setIndicator("Trivia");
+        th.addTab(specs2);
 
-        specs = th.newTabSpec("tab2");
-        specs.setContent(R.id.tab2);
-        specs.setIndicator("Faculties");
-        th.addTab(specs);
-
-        specs = th.newTabSpec("tab3");
-        specs.setContent(R.id.tab3);
-        specs.setIndicator("Notadded");
-        th.addTab(specs);
+        TabHost.TabSpec specs3 = th.newTabSpec("tab3");
+        specs3.setContent(R.id.tab3);
+        specs3.setIndicator("Notadded");
+        th.addTab(specs3);
 
 
     }
